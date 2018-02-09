@@ -23,8 +23,12 @@ session_start();
 
 
     <div class="containerWrapper">
-        <p>Hello Admin! You can now post </p>
+        <p style="text-align:center; color:green; font-size: x-large">Hello Admin! You can now post </p>
     </div>
+
+    <footer>
+        <?php require('footer.php'); ?>
+    </footer>
 
 </div>
 

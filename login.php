@@ -45,32 +45,24 @@ if(isset($_POST['login'])) {
 <body>
 <div class="wrap">
     <div id="navigation">
-        <nav>
-            <ul>
-                <li><a href="#" id="logo">THE TECHNOLOGY</a></li>
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="login.php"><button id="login">LogIn</button></a></li>
-                <li><a href="register.php"><button id="register">Register</button></a></li>
-                <li><a href="blogging.php">Blogging</a></li>
-            </ul>
-
-            <div class="clearfix"></div>
-        </nav>
+        <?php require('header.php'); ?>
     </div>
 
     <section>
         <div class="login">
 
             <form action="login.php" method="post" autocomplete="on">
+
 <!--                to display error message when the email is not correct-->
                 <div class="errorMessage">
                     <?php
                     if(isset($_SESSION['error_email'])) {
                         echo '<p style="color: red">'. $_SESSION['error_email'] . '</p>';
+                        unset($_SESSION['message']);
                     }
                     ?>
                 </div>
+
                 <label for="">Email Address: </label>
                 <span class="fa fa-1x fa-envelope"></span>
                 <input type="text" class="form-group" name="email" required placeholder="Enter your Email">
@@ -81,9 +73,11 @@ if(isset($_POST['login'])) {
                     <?php
                     if(isset($_SESSION['error_password'])) {
                         echo '<p style="color: red">'. $_SESSION['error_password'] . '</p>';
+                        unset($_SESSION['message']);
                     }
                     ?>
                 </div>
+
                 <label for="">Password: </label>
                 <span class="fa fa-1x fa-pencil"></span>
                 <input type="password" class="form-group" name="password" required placeholder="enter your password">
@@ -98,24 +92,7 @@ if(isset($_POST['login'])) {
     </section>
 
     <footer>
-        <div class="section">
-            <p>About me </p>
-            <p><b> +2348065322720</b><br>
-                No1, Banjoko close,<br>
-                Martins bus stop.<br>
-                abigailomolola1@gmail.com</p>
-        </div>
-
-        <div class="section">
-            <p>Contact Us</p>
-            <ul>
-                <li><a href="#"><img src= "image/fb.png"></a></li>
-                <li><a href="#"><img src="image/google.png"></a></li>
-                <li><a href="#"><img src="image/twiter.png"></a></li>
-            </ul>
-        </div>
-
-        <div class="clearfix"></div>
+        <?php require('footer.php'); ?>
     </footer>
 
 </div>

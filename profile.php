@@ -23,8 +23,35 @@ session_start();
 
 
     <div class="containerWrapper">
-        <p>This is the profile page</p>
+
+        <div class="errorMessage">
+            <?php
+            if (isset($_SESSION['message'])) {
+                echo '<p style="color: blue; text-align: center; font-size: 30px">' . $_SESSION['message'] . '</p>';
+                unset($_SESSION['message']);
+            }
+            ?>
+        </div>
+
+        <div class="errorMessage">
+            <?php
+            if (isset($_SESSION['logged_in'])) {
+                ;
+                echo
+                    '<p style="color: blue; text-align:center; font-size:25px">' .
+
+                    "You are already logged in! <br> <br> " .
+
+                    " You can now proceed" . '</p>';
+
+            }
+            ?>
+        </div>
     </div>
+
+    <footer>
+        <?php require('footer.php'); ?>
+    </footer>
 
 </div>
 

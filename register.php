@@ -56,31 +56,16 @@ if(isset($_POST['register'])) {
 <body>
 <div class="wrap">
     <div id="navigation">
-        <nav>
-            <ul>
-                <li><a href="#" id="logo">THE TECHNOLOGY</a></li>
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="login.php"><button id="login">LogIn</button></a></li>
-                <li><a href="register.php"><button id="register">Register</button></a></li>
-                <li><a href="blogging.php">Blogging</a></li>
-            </ul>
+        <?php require('header.php'); ?>
 
-            <div class="clearfix"></div>
-        </nav>
     </div>
 
     <section>
         <div class="register">
             <form action="register.php" method="post" autocomplete="on">
-                <div class="errorMessage">
-                    <?php
-                    if(isset($_SESSION['message'])) {
-                        echo '<p style="color: red">'. $_SESSION['message'] . '</p>';
-                    }
-                    ?>
-                </div>
-                <label for="">UserName: </label>
+
+
+            <label for="">UserName: </label>
                 <span class="fa fa-1x fa-user"></span>
                 <input type="text" class="form-group" name="user_name" required placeholder="Enter your username">
                 <br>
@@ -100,24 +85,7 @@ if(isset($_POST['register'])) {
     </section>
 
     <footer>
-        <div class="section">
-            <p>About me </p>
-            <p><b> +2348065322720</b><br>
-                No1, Banjoko close,<br>
-                Martins bus stop.<br>
-                abigailomolola1@gmail.com</p>
-        </div>
-
-        <div class="section">
-            <p>Contact Us</p>
-            <ul>
-                <li><a href="#"><img src= "image/fb.png"></a></li>
-                <li><a href="#"><img src="image/google.png"></a></li>
-                <li><a href="#"><img src="image/twiter.png"></a></li>
-            </ul>
-        </div>
-
-        <div class="clearfix"></div>
+        <?php require('footer.php'); ?>
     </footer>
 
 </div>
