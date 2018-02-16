@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         . "VALUES ('$title','$body')";
 
     if ($mysqli->query($sql)) {
-
+        $_SESSION['post'] = "Your post has been submitted successfully";
     }
 }
 ?>
@@ -41,6 +41,13 @@ if (isset($_POST['submit'])) {
 
     <section>
         <div class="post">
+        <div style="text-align:center;">
+        <?php
+        if(isset($_SESSION['post'])) {
+            echo '<p>' . $_SESSION['post'] . '</p>';
+        }
+        ?>
+        </div>
             <form action="blogging.php" method="post" autocomplete="on">
                 Title:
                 <textarea name="title" cols="40" rows="2"></textarea>
