@@ -2,12 +2,12 @@
 require('db.php');
 session_start();
 if (isset($_POST['submit'])) {
-//    $_SESSION['title'] = $_POST['title'];
+    $_SESSION['title'] = $_POST['title'];
 //    var_dump($_POST);
 ////    echo $_POST;
 ////    die();
 //
-////    $_SESSION['body'] = $_POST['body'];
+    $_SESSION['body'] = $_POST['body'];
 //    var_dump($_POST['body']);
 ////    die();
 
@@ -45,6 +45,8 @@ if (isset($_POST['submit'])) {
                 Title:
                 <textarea name="title" cols="40" rows="2"></textarea>
                 <br>
+
+
                 body:
                 <textarea name="body" cols="40" rows="5"></textarea>
                 <br>
